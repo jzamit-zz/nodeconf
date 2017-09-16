@@ -1,0 +1,17 @@
+{
+  "name": "jorgez",
+  "version": "1.0.0",
+  "description": "Project made to compete for NodeJS Conf 2017",
+  "main": "app.js",
+  "git": "git@github.com:jzamit/nodeconf.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJSConf",
+    "Oktana",
+    "JS"
+  ],
+  "author": "Jorge Zamit",
+  "license": "ISC"
+}
