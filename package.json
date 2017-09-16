@@ -1,12 +1,17 @@
 {
-  "name": "jorgez",
+  "name": "node-socketIO",
   "version": "1.0.0",
   "description": "Project made to compete for NodeJS Conf 2017",
   "main": "app.js",
-  "git": "git@github.com:jzamit/nodeconf.git",
+  "repository" : { 
+    "type" : "git",
+    "url" : "git@github.com:jzamit/nodeconf.git"
+  },
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": "6.11.3",
   "keywords": [
     "NodeJSConf",
     "Oktana",
