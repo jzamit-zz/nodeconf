@@ -16,14 +16,17 @@ let io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
-	console.log(`New user connection ${socket}`);
+	console.log(`New user connection`);
+
+	socket.on('disconnect', () => {
+		console.log(`User disconnected`);
+	});
 });
 
-io.on('disconnect', () => {
-	console.log(`User disconnected`);
-});
+
 
 server.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
 	console.log(publicPath);
 });
+
