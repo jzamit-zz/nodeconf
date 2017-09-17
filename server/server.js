@@ -16,11 +16,11 @@ let io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
-	console.log(`New user connection ${socket}`);
-});
+	console.log(`New user connection`);
 
-io.on('disconnect', () => {
-	console.log(`User disconnected`);
+	socket.on('disconnect', () => {
+		console.log(`User disconnected`);
+	});
 });
 
 server.listen(port, () => {
