@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Project made to compete for NodeJS Conf 2017",
   "main": "app.js",
-  "repository" : { 
-    "type" : "git",
-    "url" : "git@github.com:jzamit/nodeconf.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jzamit/nodeconf.git"
   },
   "scripts": {
     "start": "node server/server.js",
@@ -18,5 +18,9 @@
     "JS"
   ],
   "author": "Jorge Zamit",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  }
 }
