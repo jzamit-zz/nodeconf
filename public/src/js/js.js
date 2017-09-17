@@ -2,7 +2,8 @@ var socket = io();
 
 socket.on('connect', function(){
 	console.log('Connected to server...');
-	talkToServer(socket, 'createMessage', {to: 'jon@example.com', body: 'Some message'});
+
+	talkToServer(socket, 'userJoined', {from: 'jon@example.com', text: 'Joined'});
 	
 });
 
@@ -10,13 +11,12 @@ socket.on('disconnect', function(){
 	console.log('Disconnected from server...');
 });
 
-socket.on('disconnect', function(){
-	console.log('Disconnected from server...');
-});
+
 
 socket.on('newMessage', function(data) {
 	console.log('newMessage '+ JSON.stringify(data));
  });
+
 
 function talkToServer(socket, event, data){
 
@@ -28,15 +28,16 @@ function talkToServer(socket, event, data){
 	switch(event) {
 
 	    case 'createMessage':
-	        socket.emit('createMessage', data);
 
 	        break;
 
-	    case n:
+	    case 'userJoined':
 	        
 	        break;
 
 	    default:
 	        console.log('Event error happened!');
 	}
+	socket.emit(event, data);
+
 }
