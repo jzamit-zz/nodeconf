@@ -19,8 +19,11 @@ io.on('connection', (socket) => {
 	console.log(`New user connection`);
 
 	socket.on('createMessage', (data) => {
-		console.log(`Created message ${data}`);
+		console.log(`Created message ${JSON.stringify(data)}`);
+
 	});
+
+	socket.emit('newMessage', {from:'pepe', text: 'hi pedro!'});
 
 	socket.on('disconnect', () => {
 		console.log(`User disconnected`);
