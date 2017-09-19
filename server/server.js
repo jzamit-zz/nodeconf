@@ -19,6 +19,7 @@ app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
 	console.log(`New user connection`);
+
 	socket.emit('newMessage', generateMessage('Admin', 'Welcome the this chat'));
 
 	socket.on('userJoined', (data) => {
@@ -29,11 +30,12 @@ io.on('connection', (socket) => {
 
 	});
 	
-	socket.on('createMessage', (message) => {
+	socket.on('createMessage', (message, callback) => {
 		console.log(`Created message ${JSON.stringify(message)}`);
 
 		//Emit event to all connections
 		io.emit('newMessage', generateMessage(message.from, message.text));
+		callback('This is from the server');
 
 	});
 
@@ -49,6 +51,6 @@ io.on('connection', (socket) => {
 
 server.listen(port, () => {
 	console.log(`Server is running on port: ${port}`);
-	console.log(publicPath);
+	
 });
 

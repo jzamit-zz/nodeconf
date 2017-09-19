@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 	<head>
 		<title>Node JS - Socket IO - Oktana Challenge 2017</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
-
 	<body>
 		<h1>Hello Challenge</h1>
+		<div>
+			<form id="message-form">
+				<input type="text" name="message" placeholder="Message">
+				<button class="">Send</button>
+			</form>
+		</div>
 
+		<div>
+			<ol id="messages"></ol>
+		</div>
+		
+  
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/js.js"></script>
+	</body>
 	</body>
 </html>
